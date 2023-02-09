@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    working_dir: "/app"
+    build: ${IMAGE}
+    environment:
+      - "DISPLAY=$DISPLAY"
+    network_mode: "host"
+    volumes:
+      - "./:/app"
+    command: tail -f /dev/null
